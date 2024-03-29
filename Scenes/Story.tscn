@@ -1,0 +1,91 @@
+[gd_scene load_steps=18 format=3 uid="uid://rx3b1mpinbsf"]
+
+[ext_resource type="Script" path="res://Scripts/Story.gd" id="1_b4uxg"]
+[ext_resource type="Texture2D" uid="uid://jg4n8g8eb6k1" path="res://Sprites/slide1.png" id="2_36ke8"]
+[ext_resource type="Texture2D" uid="uid://c3ce3wprri5ew" path="res://Sprites/slide2.png" id="3_myqf5"]
+[ext_resource type="Texture2D" uid="uid://b8mto7aubxfd7" path="res://Sprites/slide3.png" id="4_4fysm"]
+[ext_resource type="FontFile" uid="uid://b7ye3tkhkdf7o" path="res://Fonts/hometown_memesbruh03.ttf" id="4_4rdyr"]
+[ext_resource type="Texture2D" uid="uid://q3v2ty0vabk1" path="res://Sprites/slide4.png" id="5_nqkxv"]
+[ext_resource type="Texture2D" uid="uid://celp0ls3pwxvu" path="res://Sprites/slide5.png" id="6_ondip"]
+[ext_resource type="Texture2D" uid="uid://cnljox8jqt0g4" path="res://Sprites/slide6.png" id="7_66kga"]
+[ext_resource type="Texture2D" uid="uid://b2xybynnh7vpk" path="res://Sprites/slide7.png" id="8_2ofof"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igoip"]
+atlas = ExtResource("2_36ke8")
+region = Rect2(0, 0, 1080, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pegs6"]
+atlas = ExtResource("3_myqf5")
+region = Rect2(0, 0, 1080, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x85dv"]
+atlas = ExtResource("4_4fysm")
+region = Rect2(0, 0, 1080, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88sso"]
+atlas = ExtResource("5_nqkxv")
+region = Rect2(0, 0, 1080, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lihm0"]
+atlas = ExtResource("6_ondip")
+region = Rect2(0, 0, 1080, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lufa"]
+atlas = ExtResource("7_66kga")
+region = Rect2(0, 0, 1080, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkl08"]
+atlas = ExtResource("8_2ofof")
+region = Rect2(0, 0, 1080, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hoghf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igoip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pegs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x85dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88sso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lihm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lufa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkl08")
+}],
+"loop": true,
+"name": &"Slideshow",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_b4uxg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(1.06667, 0.9)
+sprite_frames = SubResource("SpriteFrames_hoghf")
+animation = &"Slideshow"
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 1063.0
+offset_top = 602.0
+offset_right = 1151.0
+offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("4_4rdyr")
+theme_override_font_sizes/font_size = 32
+text = "Далее
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
