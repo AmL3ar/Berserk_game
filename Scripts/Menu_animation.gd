@@ -14,9 +14,9 @@ func _process(delta):
 
 func _on_start_pressed():
 	animation.play("StartMenu")
-	$Start.visible = false
-	$Exit.visible = false
-	$Stroka.visible = false
+	$Button_Exit.visible = false
+	$Logo.visible = false
+	$Button_Start.visible = false
 	
 
 func _on_exit_pressed():

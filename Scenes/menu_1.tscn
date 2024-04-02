@@ -1,10 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://uijybqmyp4vs"]
+[gd_scene load_steps=29 format=3 uid="uid://uijybqmyp4vs"]
 
 [ext_resource type="Texture2D" uid="uid://diy6gncqudxlk" path="res://Sprites/11-pixilart-ezgif.com-gif-to-sprite-converter.png" id="1_jhjba"]
 [ext_resource type="Script" path="res://Scripts/Menu_animation.gd" id="1_t2sug"]
 [ext_resource type="Texture2D" uid="uid://ce2tv88untcwh" path="res://Sprites/stroka.png" id="3_0802g"]
 [ext_resource type="Texture2D" uid="uid://co5ecew8n7tft" path="res://Sprites/berserkEye-ezgif.com-gif-to-sprite-converter.png" id="3_fxsiu"]
 [ext_resource type="FontFile" uid="uid://b7ye3tkhkdf7o" path="res://Fonts/hometown_memesbruh03.ttf" id="3_mbm2s"]
+[ext_resource type="Texture2D" uid="uid://b1o7tdn4xtbdj" path="res://Sprites/stroka-export.png" id="6_6ui2y"]
+[ext_resource type="Texture2D" uid="uid://f1j2t7fb3iy1" path="res://Sprites/buttons.png" id="6_cracs"]
+[ext_resource type="Texture2D" uid="uid://d0v28l5ld337n" path="res://Sprites/buttons2.png" id="8_6w4p7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h65hm"]
 atlas = ExtResource("1_jhjba")
@@ -117,6 +120,16 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ool4c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ryc5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imjso"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eypya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_colvy"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t2sug")
 
@@ -127,36 +140,92 @@ scale = Vector2(0.929032, 0.9)
 sprite_frames = SubResource("SpriteFrames_3v2fc")
 animation = &"StartMenu"
 
-[node name="Start" type="Button" parent="."]
+[node name="Button_Start" type="Panel" parent="."]
+offset_left = 88.0
+offset_top = 263.0
+offset_right = 522.0
+offset_bottom = 370.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ool4c")
+
+[node name="Start_Background" type="Sprite2D" parent="Button_Start"]
 texture_filter = 1
-offset_left = 121.0
-offset_top = 256.0
-offset_right = 351.0
-offset_bottom = 336.0
+position = Vector2(181.125, 99)
+scale = Vector2(2.8371, 1.4023)
+texture = ExtResource("6_cracs")
+
+[node name="Start" type="Button" parent="Button_Start"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0709907
+anchor_top = 0.164
+anchor_right = 0.739
+anchor_bottom = 0.5
+offset_left = -130.81
+offset_top = -1.548
+offset_right = 57.19
+offset_bottom = 40.452
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_mbm2s")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6ryc5")
 text = "Начать играть"
 flat = true
-metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Button" parent="."]
+[node name="Button_Exit" type="Panel" parent="."]
+offset_left = 91.0
+offset_top = 381.0
+offset_right = 329.0
+offset_bottom = 483.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_imjso")
+
+[node name="Exit_Background" type="Sprite2D" parent="Button_Exit"]
 texture_filter = 1
-offset_left = 121.0
-offset_top = 359.0
-offset_right = 351.0
-offset_bottom = 439.0
+position = Vector2(123, 50)
+scale = Vector2(2.20384, 1.44718)
+texture = ExtResource("8_6w4p7")
+
+[node name="Exit" type="Button" parent="Button_Exit"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.268
+anchor_top = 0.326
+anchor_right = 0.629
+anchor_bottom = 0.665
+offset_left = -55.784
+offset_top = -20.252
+offset_right = 48.216
+offset_bottom = 27.7481
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_mbm2s")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eypya")
 text = "Выйти
 "
 flat = true
-metadata/_edit_use_anchors_ = true
 
-[node name="Stroka" type="Sprite2D" parent="."]
-position = Vector2(230, 150)
+[node name="Logo" type="Panel" parent="."]
+offset_left = 57.0
+offset_top = 52.0
+offset_right = 426.0
+offset_bottom = 244.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_colvy")
+
+[node name="Stroka" type="Sprite2D" parent="Logo"]
+position = Vector2(173, 98)
 scale = Vector2(0.327, 0.31)
 texture = ExtResource("3_0802g")
 
+[node name="Stroka-export" type="Sprite2D" parent="Logo"]
+position = Vector2(172, 96)
+scale = Vector2(0.327, 0.327)
+texture = ExtResource("6_6ui2y")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Button_Start/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_Exit/Exit" to="." method="_on_exit_pressed"]
