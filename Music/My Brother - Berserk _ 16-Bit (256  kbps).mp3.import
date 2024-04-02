@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddj72c3f7h708"
+path="res://.godot/imported/My Brother - Berserk _ 16-Bit (256  kbps).mp3-93db31c8c290af4f9a6a7f6671847c12.mp3str"
+
+[deps]
+
+source_file="res://Music/My Brother - Berserk _ 16-Bit (256  kbps).mp3"
+dest_files=["res://.godot/imported/My Brother - Berserk _ 16-Bit (256  kbps).mp3-93db31c8c290af4f9a6a7f6671847c12.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

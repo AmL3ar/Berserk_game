@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://uijybqmyp4vs"]
+[gd_scene load_steps=30 format=3 uid="uid://uijybqmyp4vs"]
 
 [ext_resource type="Texture2D" uid="uid://diy6gncqudxlk" path="res://Sprites/11-pixilart-ezgif.com-gif-to-sprite-converter.png" id="1_jhjba"]
 [ext_resource type="Script" path="res://Scripts/Menu_animation.gd" id="1_t2sug"]
+[ext_resource type="AudioStream" uid="uid://lxbjk1awy1g8" path="res://Music/Guts Theme - Berserk  (16 Bits ) (256  kbps).mp3" id="2_cusks"]
 [ext_resource type="Texture2D" uid="uid://ce2tv88untcwh" path="res://Sprites/stroka.png" id="3_0802g"]
 [ext_resource type="Texture2D" uid="uid://co5ecew8n7tft" path="res://Sprites/berserkEye-ezgif.com-gif-to-sprite-converter.png" id="3_fxsiu"]
 [ext_resource type="FontFile" uid="uid://b7ye3tkhkdf7o" path="res://Fonts/hometown_memesbruh03.ttf" id="3_mbm2s"]
@@ -124,7 +125,7 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ryc5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imjso"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ka3fx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eypya"]
 
@@ -132,6 +133,11 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t2sug")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cusks")
+autoplay = true
+bus = &"Music"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -143,7 +149,7 @@ animation = &"StartMenu"
 [node name="Button_Start" type="Panel" parent="."]
 offset_left = 88.0
 offset_top = 263.0
-offset_right = 522.0
+offset_right = 517.0
 offset_bottom = 370.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ool4c")
 
@@ -179,7 +185,7 @@ offset_left = 91.0
 offset_top = 381.0
 offset_right = 329.0
 offset_bottom = 483.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_imjso")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ka3fx")
 
 [node name="Exit_Background" type="Sprite2D" parent="Button_Exit"]
 texture_filter = 1
@@ -195,10 +201,10 @@ anchor_left = 0.268
 anchor_top = 0.326
 anchor_right = 0.629
 anchor_bottom = 0.665
-offset_left = -55.784
-offset_top = -20.252
-offset_right = 48.216
-offset_bottom = 27.7481
+offset_left = -64.784
+offset_top = -19.252
+offset_right = 39.216
+offset_bottom = 28.7481
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -225,6 +231,13 @@ texture = ExtResource("3_0802g")
 position = Vector2(172, 96)
 scale = Vector2(0.327, 0.327)
 texture = ExtResource("6_6ui2y")
+
+[node name="Music_settings" type="VScrollBar" parent="."]
+offset_left = 1087.0
+offset_top = 387.0
+offset_right = 1123.0
+offset_bottom = 606.0
+max_value = 47.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="Button_Start/Start" to="." method="_on_start_pressed"]

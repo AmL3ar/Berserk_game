@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://rx3b1mpinbsf"]
+[gd_scene load_steps=19 format=3 uid="uid://rx3b1mpinbsf"]
 
 [ext_resource type="Script" path="res://Scripts/Story.gd" id="1_b4uxg"]
+[ext_resource type="AudioStream" uid="uid://cbf7ywkc8wk26" path="res://Music/Guts Berserker Armor - Aria (8-bit) - Animated Pixel Art (256  kbps).mp3" id="2_0f7nc"]
 [ext_resource type="Texture2D" uid="uid://jg4n8g8eb6k1" path="res://Sprites/slide1.png" id="2_36ke8"]
 [ext_resource type="Texture2D" uid="uid://c3ce3wprri5ew" path="res://Sprites/slide2.png" id="3_myqf5"]
 [ext_resource type="Texture2D" uid="uid://b8mto7aubxfd7" path="res://Sprites/slide3.png" id="4_4fysm"]
@@ -69,6 +70,12 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_b4uxg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0f7nc")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
