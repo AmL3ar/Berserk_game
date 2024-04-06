@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brqlrrexnwpuy"
+path="res://.godot/imported/Tell Me Why - Berserk OP 16-Bit (FULL VERSION) (256  kbps).mp3-06308d544d76a23789935954d6f8ba70.mp3str"
+
+[deps]
+
+source_file="res://Music/Tell Me Why - Berserk OP 16-Bit (FULL VERSION) (256  kbps).mp3"
+dest_files=["res://.godot/imported/Tell Me Why - Berserk OP 16-Bit (FULL VERSION) (256  kbps).mp3-06308d544d76a23789935954d6f8ba70.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

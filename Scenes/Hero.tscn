@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddh67uafwhb0d"]
+
+[ext_resource type="Script" path="res://Scripts/Hero.gd" id="1_tnp8f"]
+[ext_resource type="Texture2D" uid="uid://btcafsgrwaec4" path="res://Sprites/berserkIDLE3(final).png" id="2_7vjjo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw482"]
+atlas = ExtResource("2_7vjjo")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75rai"]
+atlas = ExtResource("2_7vjjo")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3nuc"]
+atlas = ExtResource("2_7vjjo")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwlfa"]
+atlas = ExtResource("2_7vjjo")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ekne"]
+atlas = ExtResource("2_7vjjo")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7sn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw482")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75rai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3nuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwlfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ekne")
+}],
+"loop": true,
+"name": &"IdleRight",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwywu"]
+radius = 23.0
+height = 64.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(127, 411)
+scale = Vector2(2, 2)
+script = ExtResource("1_tnp8f")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, -68)
+scale = Vector2(1.025, 1)
+sprite_frames = SubResource("SpriteFrames_e7sn8")
+animation = &"IdleRight"
+frame_progress = 0.933924
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_vwywu")
