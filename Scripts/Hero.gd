@@ -39,8 +39,7 @@ func updateSpriteRenderer(velX:float,velY:float):
 	if (running && !jumping):
 		animation.play("RunRight")
 		last_key_pressed = "IdleRight"
-		if velX < 0:
-			animation.flip_h = true
+		if velX < 0:			
 			last_key_pressed = "IdleLeft"
 	elif (jumping):
 		if velY < 300:

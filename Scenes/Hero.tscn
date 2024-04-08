@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Hero.gd" id="1_tnp8f"]
 [ext_resource type="Texture2D" uid="uid://btcafsgrwaec4" path="res://Sprites/berserkIDLE3(final).png" id="2_7vjjo"]
 [ext_resource type="Texture2D" uid="uid://csjk8egdw66q3" path="res://Sprites/berserkjump.png" id="3_5ydpq"]
-[ext_resource type="Texture2D" uid="uid://nm124dlb15ei" path="res://Sprites/BerserkRunRight.png" id="3_i6m71"]
+[ext_resource type="Texture2D" path="res://Sprites/BerserkRunRight.png" id="3_i6m71"]
 [ext_resource type="Texture2D" uid="uid://daof1qanuxes1" path="res://Sprites/BerserkRunLeft.png" id="3_maexo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0n7f8"]
