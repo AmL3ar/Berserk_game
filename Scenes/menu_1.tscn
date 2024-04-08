@@ -233,10 +233,10 @@ scale = Vector2(0.327, 0.327)
 texture = ExtResource("6_6ui2y")
 
 [node name="Music_settings" type="VScrollBar" parent="."]
-offset_left = 1087.0
-offset_top = 387.0
-offset_right = 1123.0
-offset_bottom = 606.0
+offset_left = 1082.0
+offset_top = 398.0
+offset_right = 1118.0
+offset_bottom = 617.0
 max_value = 47.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
