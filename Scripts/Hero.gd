@@ -15,9 +15,11 @@ const JUMP_VELOCITY = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation = $AnimationPlayer
+@onready var rotate = $AttackDirection
 var max_health = 100
 var curr_dir = "IdleRight"
 var state = MOVE
+var damage_basic = 50
 
 var hero_pos
 var health
@@ -80,9 +82,11 @@ func attack_state():
 	velocity.x = 0
 	if curr_dir == "IdleRight":
 		animation.play("EasyAttackRight")
+		rotate.scale = Vector2(1,1)
 		await animation.animation_finished
 	else:
 		animation.play("EasyAttackLeft")
+		rotate.scale = Vector2(-1,1)
 		await animation.animation_finished
 	state = MOVE
 
@@ -109,3 +113,7 @@ func _on_damage_received(enemy_damage):
 	else:
 		state = DAMAGE	
 	emit_signal("health_changed", health)
+
+
+func _on_hit_box_area_entered(area):
+	Signals.emit_signal("hero_attack", damage_basic)

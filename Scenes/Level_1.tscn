@@ -86,7 +86,7 @@ position = Vector2(1398, 454)
 position = Vector2(1171, 442)
 
 [node name="Hero" parent="." instance=ExtResource("5_ulu7p")]
-position = Vector2(169, 279)
+position = Vector2(173, 425)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
