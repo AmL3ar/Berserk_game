@@ -27,5 +27,3 @@ func _on_exit_pressed():
 	
 func update_volume(vol):
 	AudioServer.set_bus_volume_db(0, vol)
-
-
