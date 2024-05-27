@@ -89,6 +89,7 @@ position = Vector2(1171, 442)
 position = Vector2(173, 425)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer"]
 texture_filter = 1

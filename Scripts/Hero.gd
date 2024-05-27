@@ -16,6 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation = $AnimationPlayer
 @onready var rotate = $AttackDirection
+@onready var hitbox = $AttackDirection/DamageBox/HitBox
 var max_health = 100
 var curr_dir = "IdleRight"
 var state = MOVE
@@ -67,9 +68,17 @@ func move_state():
 		
 		if velocity.x > 0 and velocity.y == 0:
 			animation.play("RunRight")
+			rotate.rotation_degrees = 0
+			rotate.position.x = 0
+			rotate.position.y = 0
+			hitbox.position.y = 0
 			curr_dir = "IdleRight"
 		elif velocity.y == 0:
-			animation.play("RunLeft")
+			animation.play("RunRight")
+			rotate.rotation_degrees = 180
+			rotate.position.x = -45
+			rotate.position.y = 13
+			hitbox.position.y = -15
 			curr_dir = "IdleLeft"
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -82,11 +91,9 @@ func attack_state():
 	velocity.x = 0
 	if curr_dir == "IdleRight":
 		animation.play("EasyAttackRight")
-		rotate.scale = Vector2(1,1)
 		await animation.animation_finished
 	else:
 		animation.play("EasyAttackLeft")
-		rotate.scale = Vector2(-1,1)
 		await animation.animation_finished
 	state = MOVE
 
