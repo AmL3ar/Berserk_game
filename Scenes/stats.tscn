@@ -1,0 +1,164 @@
+[gd_scene load_steps=18 format=3 uid="uid://cv51rq6ns6ys5"]
+
+[ext_resource type="Script" path="res://Scripts/stats.gd" id="1_imukp"]
+[ext_resource type="Texture2D" uid="uid://dmpi0b7shnexx" path="res://Sprites/panel.png" id="2_7xtyf"]
+[ext_resource type="Texture2D" uid="uid://bkyjk22m1f8jh" path="res://Sprites/MarkBerserk.png" id="2_b3oug"]
+[ext_resource type="Texture2D" uid="uid://602otbhbyvha" path="res://Sprites/BlackMarkberserk3.png" id="3_4cynj"]
+[ext_resource type="Texture2D" uid="uid://cnqqfgr6pprhk" path="res://Sprites/StaminaBlack.png" id="4_y33su"]
+[ext_resource type="Texture2D" uid="uid://b4q6euobplxoi" path="res://Sprites/StaminaWhite.png" id="5_f3tgq"]
+[ext_resource type="Texture2D" uid="uid://cji3qb3kqtvet" path="res://Sprites/RageGuts-sheet-sheet-new.png" id="7_h85ru"]
+[ext_resource type="Texture2D" uid="uid://b7wyyqdu1vnwj" path="res://Sprites/CannonGuts.png" id="8_83yjj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdwbl"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f166x"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrxi0"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2exd"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmdnn"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq4dq"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyv0u"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4080b"]
+atlas = ExtResource("7_h85ru")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dakyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdwbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f166x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrxi0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2exd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmdnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq4dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyv0u")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4080b")
+}],
+"loop": true,
+"name": &"no_activate",
+"speed": 5.0
+}]
+
+[node name="Stats" type="CanvasLayer"]
+script = ExtResource("1_imukp")
+
+[node name="Panel" type="Sprite2D" parent="."]
+modulate = Color(0.517133, 0, 0.0852197, 1)
+self_modulate = Color(0.497474, 0.497474, 0.497474, 1)
+texture_filter = 1
+position = Vector2(576, 574.5)
+scale = Vector2(0.28125, 0.198381)
+texture = ExtResource("2_7xtyf")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = -31.0
+offset_top = 522.0
+offset_right = 122.0
+offset_bottom = 636.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("3_4cynj")
+texture_progress = ExtResource("2_b3oug")
+
+[node name="Stamina" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = 12.0
+offset_top = 512.0
+offset_right = 170.0
+offset_bottom = 636.0
+max_value = 110.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("4_y33su")
+texture_progress = ExtResource("5_f3tgq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1070, 576)
+scale = Vector2(2.12, 2.04)
+sprite_frames = SubResource("SpriteFrames_dakyc")
+animation = &"activate"
+frame_progress = 0.816802
+
+[node name="CannonGuts" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(932.5, 578)
+scale = Vector2(3.78125, 3.57813)
+texture = ExtResource("8_83yjj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1105.0
+offset_top = 504.0
+offset_right = 1145.0
+offset_bottom = 527.0
+text = "R"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 969.5
+offset_top = 500.0
+offset_right = 1009.5
+offset_bottom = 523.0
+text = "U"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 342.0
+offset_top = 621.0
+offset_right = 464.0
+offset_bottom = 644.0
+text = "H - удар мечом"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 754.0
+offset_top = 623.0
+offset_right = 1022.0
+offset_bottom = 646.0
+text = "R - ты усиливаешь следующую атаку в 2 раза"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 502.0
+offset_top = 623.0
+offset_right = 770.0
+offset_bottom = 646.0
+text = "U - ты стреляешь из пушки"

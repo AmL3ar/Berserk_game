@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://vfp5cl4iitc6"]
+
+[ext_resource type="Script" path="res://Scripts/health_bar_boss.gd" id="1_ixepm"]
+[ext_resource type="Texture2D" uid="uid://cb8acgim6grm2" path="res://Sprites/health_boss_grey.png" id="1_u47i4"]
+[ext_resource type="Texture2D" uid="uid://byr07uyki4j8e" path="res://Sprites/health_boss.png" id="2_nrwqe"]
+[ext_resource type="Texture2D" uid="uid://dxq3vv6vox8va" path="res://Sprites/emblem.png" id="3_h86er"]
+
+[node name="Health_bar_boss" type="CanvasLayer"]
+script = ExtResource("1_ixepm")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = 369.0
+offset_top = 61.0
+offset_right = 1006.0
+offset_bottom = 144.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_u47i4")
+texture_progress = ExtResource("2_nrwqe")
+
+[node name="Emblem" type="Sprite2D" parent="HealthBar"]
+texture_filter = 1
+position = Vector2(-61, 41.5625)
+scale = Vector2(4.09, 3.7825)
+texture = ExtResource("3_h86er")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://uijybqmyp4vs"]
+[gd_scene load_steps=31 format=3 uid="uid://uijybqmyp4vs"]
 
 [ext_resource type="Texture2D" uid="uid://diy6gncqudxlk" path="res://Sprites/11-pixilart-ezgif.com-gif-to-sprite-converter.png" id="1_jhjba"]
 [ext_resource type="Script" path="res://Scripts/Menu_animation.gd" id="1_t2sug"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b1o7tdn4xtbdj" path="res://Sprites/stroka-export.png" id="6_6ui2y"]
 [ext_resource type="Texture2D" uid="uid://f1j2t7fb3iy1" path="res://Sprites/buttons.png" id="6_cracs"]
 [ext_resource type="Texture2D" uid="uid://d0v28l5ld337n" path="res://Sprites/buttons2.png" id="8_6w4p7"]
+[ext_resource type="PackedScene" uid="uid://c57qnt3j2v5td" path="res://Scenes/volume.tscn" id="8_r4ntd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h65hm"]
 atlas = ExtResource("1_jhjba")
@@ -134,11 +135,6 @@ animations = [{
 [node name="Menu_1" type="Node2D"]
 script = ExtResource("1_t2sug")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_cusks")
-autoplay = true
-bus = &"Music"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(576, 324)
@@ -215,6 +211,13 @@ text = "Выйти
 "
 flat = true
 
+[node name="Volume" parent="." instance=ExtResource("8_r4ntd")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cusks")
+autoplay = true
+bus = &"Music"
+
 [node name="Logo" type="Panel" parent="."]
 offset_left = 57.0
 offset_top = 52.0
@@ -231,13 +234,6 @@ texture = ExtResource("3_0802g")
 position = Vector2(172, 96)
 scale = Vector2(0.327, 0.327)
 texture = ExtResource("6_6ui2y")
-
-[node name="Music_settings" type="VScrollBar" parent="."]
-offset_left = 1082.0
-offset_top = 398.0
-offset_right = 1118.0
-offset_bottom = 617.0
-max_value = 47.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="Button_Start/Start" to="." method="_on_start_pressed"]
